@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+
+<link href="/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script type="text/javascript">
+function showmsg(){
+ window.location.href="/plus/guestbook.php"; 
+}
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+
+
+
+	<meta charset="UTF-8" />
+		<title>澳洲留学、澳洲移民、雇主担保移民| 13年经验、9000多成功案例助您成功 - 麦尔肯移民留学与投资咨询</title>
+	<link rel="stylesheet" href="/mon/wp-content/themes/1/style.css">
+<link rel='stylesheet' id='sgjvsscrollerstyle-css'  href='/mon/wp-content/plugins/jquery-vertical-scroller/sgjvs_stylesheet.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='/mon/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery.lightbox.min.css-css'  href='/mon/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css' type='text/css' media='all' />
+<script type="text/javascript">
+var duoshuoQuery = {"short_name":"montic","sso":{"login":"http:\/\/montic.com.au\/wp-login.php?action=duoshuo_login","logout":"http:\/\/montic.com.au\/wp-login.php?action=logout&_wpnonce=58d2e46009"},"theme":"default","stylePatch":"wordpress\/james_Xu"};
+duoshuoQuery.sso.login += '&redirect_to=' + encodeURIComponent(window.location.href);
+duoshuoQuery.sso.logout += '&redirect_to=' + encodeURIComponent(window.location.href);
+</script>
+<script type="text/javascript" src="http://static.duoshuo.com/embed.js" charset="UTF-8" async="async"></script>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<script type='text/javascript' src='/mon/wp-content/plugins/jquery-vertical-scroller/scripts/jquery-scroller-v1.min.js'></script>
+<link rel="stylesheet" href="/mon/wp-content/plugins/wp-page-numbers/default/wp-page-numbers.css" type="text/css" media="screen" />	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<meta name="description" content="运通教育、移民" />
+<meta name="keywords" content="澳洲留学,澳洲移民,雇主担保,投资移民" />
+<meta name="google-site-verification" content="UA-42198828-1" />
+<link rel='next' href='http://montic.com.au/page/2/' />
+
+<link rel="canonical" href="montic.com.html" />
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-42198828-1']);
+		  _gaq.push(['_setDomainName', 'www.montic.com.au']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+<!-- /all in one seo pack -->
+</head> <!-- end of header -->
+
+<body class="home blog">
+<div class="outside">
+<div id="page-wrap">
+
+<div class="slider">
+    <div class="logo-top">
+        <div style="position:absolute; left:5px;">
+            <img src="/mon/wp-content/themes/1/images/logo.png"></img>
+        </div>
+        <div class="tel-top">热线电话<span>(612) 92640480</span></div>
+        <div class="tel-top2">电子邮件<span>Vinton.visas@gmail.com</span></div>
+        
+    </div> <!-- end of logo-->
+	
+	
+<div class="slideshow_container slideshow_container_style-light" style="height: 240px; " data-session-id="0" data-style-name="style-light" data-style-version="2.2.21">
+
+			<div class="slideshow_loading_icon"></div>
+	
+	<div class="slideshow_content" style="display: none;">
+
+		<div class="slideshow_view">
+			<div class="slideshow_slide slideshow_slide_image">
+				<a href="#" target="_self">					<img src="/mon/wp-content/themes/1/images/banner_01.png" alt="Home Banner_1" width="1020" height="240">
+				</a>				<div class="slideshow_description_box slideshow_transparent">
+					<div class="slideshow_title"><a href="http://yuntong.ecjtu.net/" target="_self">Home Banner_1</a></div>									</div>
+			</div>
+
+			<div style="clear: both;"></div></div><div class="slideshow_view">
+			<div class="slideshow_slide slideshow_slide_image">
+				<a href="#" target="_self">					<img src="/mon/wp-content/themes/1/images/banner_02.png" alt="成功案例" width="1020" height="240">
+				</a>				<div class="slideshow_description_box slideshow_transparent">
+					<div class="slideshow_title"><a href="http://yuntong.ecjtu.net/" target="_self">成功案例</a></div>									</div>
+			</div>
+
+			<div style="clear: both;"></div></div><div class="slideshow_view">
+			<div class="slideshow_slide slideshow_slide_image">
+				<a href="#" target="_self">					<img src="/mon/wp-content/themes/1/images/banner_03.png" alt="留学澳洲" width="1020" height="240">
+				</a>				<div class="slideshow_description_box slideshow_transparent">
+					<div class="slideshow_title"><a href="http://yuntong.ecjtu.net/" target="_self">留学澳洲</a></div>									</div>
+			</div>
+
+			<div style="clear: both;"></div></div>
+	</div>
+
+	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li class="slideshow_togglePlay" data-play-text="Play" data-pause-text="Pause"></li></ul></div>
+
+	<div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-previous-text="Previous" style="display: none;"></div>
+	<div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-next-text="Next" style="display: none;"></div>
+
+	<div class="slideshow_pagination" style="display: none;" data-go-to-text="Go to slide"><div class="slideshow_pagination_center"></div></div>
+</div>
+
+	<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-1197" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1197"><a href="http://yuntong.ecjtu.net/">首页</a></li>
+	
+      	<li><a href='/a/yuntongzhuanlan/' ><span>运通专栏</span></a></li>
+      	
+      	<li><a href='/a/shangyeyimin/' ><span>商业移民</span></a></li>
+      	
+      	<li><a href='/a/jishuyimin/' ><span>技术移民</span></a></li>
+      	
+      	<li><a href='/a/guyongdanbao/' ><span>雇主担保</span></a></li>
+      	
+      	<li><a href='/a/aozhouliuxue/' ><span>澳洲留学</span></a></li>
+      	
+      	<li><a href='/a/jiating_qitaqianzheng/' ><span>家庭/其它签证</span></a></li>
+      	
+      	<li><a href='/a/chenggonganli/' ><span>成功案例</span></a></li>
+      	<li class='hover'><a href='/a/aozhouzixun/' ><span>澳洲资讯</span></a></li>
+      	<li><a href='/a/guanyuwomen/' ><span>关于我们</span></a></li>
+      	
+      	<li><a href='/a/anlidianping/' ><span>案例点评</span></a></li>
+      	
+<li id="menu-item-1207" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1207"><a href="http://yuntong.ecjtu.net/">English</a></li>
+</ul></div></div>
+
+
+<div class="clear"> </div>
+
+
+    <div class="primary">
+    
+      <div class="place"> <strong>当前位置:</strong> <a href='http://yuntong.ecjtu.net/'>主页</a> > <a href='/a/aozhouzixun/'>澳洲资讯</a> >  </div>
+ <!-- /place -->
+ <div class="viewbox">
+  <div class="title">
+   <h2>2014-2015财政年度澳洲移民新政解读</h2>
+  </div>
+  <!-- /title -->
+  <div class="info"> <small>时间:</small>2014-07-24 12:14<small>来源:</small>未知 <small>作者:</small>admin <small>点击:</small>
+   <script src="/plus/count.php?view=yes&aid=71&mid=1" type='text/javascript' language="javascript"></script>
+   次</div>
+  <!-- /info -->
+  
+
+  <div class="intro">继联邦2014-2015财政年政府预算发布，澳洲移民配额及新政策导向也随之出台。今年的新政策下移民会更容易还是更难？哪些群体会受到影响呢？且听老托向您一一道来： 今日，移民部长</div>
+  
+
+  <div class="content">
+   <table width='100%'>
+    <tr>
+     <td>
+      <p>
+	<br />
+	<br />
+	<img alt="" src="/uploads/allimg/140724/1-140H41223493T.jpg" style="width: 1026px; height: 639px" /><br />
+	<br />
+	继联邦2014-2015财政年政府预算发布，澳洲移民配额及新政策导向也随之出台。今年的新政策下移民会更容易还是更难？哪些群体会受到影响呢？且听老托向您一一道来：<br />
+	&nbsp;<br />
+	今日，移民部长Scott Morrison声称，澳大利亚2014-15财年移民计划所发生的改变将能够为政府节省3亿澳元的预算。新的移民计划总体提供了190000移民配额，这一数据与去年几近持平。所以，这个信号告诉广大移友，澳洲移民的大门仍然为您敞开，现在申请，为时未晚。<br />
+	&nbsp;<br />
+	老托运通留学移民也将针对移民局目前的政策变化关注并搜寻进一步的细节，来为广大朋友答疑解惑。<br />
+	&nbsp;<br />
+	那么，究竟新政包括哪些条款和项目，又会产生哪些影响呢？请继续往下看：<br />
+	&nbsp;<br />
+	<strong>1</strong><strong>）移民总配额数分配更多倾向技术类移民。</strong><br />
+	<br />
+	如上面提到的移民总配额数为190000，部长称其中有128550个份额将分配给技术移民，也即高达68%的移民份额将会造福有一技之长、符合澳洲长期发展需求并能为澳洲社会及经济进步作出贡献的人才。这也是今年来首次政府将技术移民的重要性重新阐释。<br />
+	&nbsp;<br />
+	在这个移民份额重心的变更中，不仅仅是技术移民的获益，雇主担保类移民的申请的优先度也将进一步提前。移民局声称此举是为了帮助澳洲本地雇主在无法找到合适的本地员工的情况尽快从海外招募有经验有能力的员工支持其生意的进展，从而进一步刺激澳洲经济的发展。同时移民局还表示，这个举措将有助于降低通过独立技术移民方式来澳但无法获得有保障的雇佣机会的人群所面临的就业风险。<br />
+	&nbsp;<br />
+	<strong>老托点评：</strong><br />
+	技术移民的朋友们，请狠狠地关注这项新政策及其后续细节。目前看来在新的SOL公布之前，移民局的政策对于技术移民的关照是对于大家的利好消息。不过值得提醒的是，根据我们以往十多年的从业经验，移民总份额增加并不意味着每个提名职业的份额都会平均增加，所以一定职业类别的朋友们仍然需要密切关注移民局的动态，及早下手申请，以免耽误最佳的申请时机。老托也会及时给大家送上新鲜的信息，欢迎大家进一步咨询和了解。<br />
+	&nbsp;<br />
+	对于雇主担保的朋友来说，新政也将起到极大的推动作用，通过己之所长来这片蔚蓝天空下的热土上辛勤工作、开辟一片新天地的梦想将离你们更近一步。<br />
+	&nbsp;<br />
+	<strong>2</strong><strong>）商业移民优先度将进一步提高</strong><br />
+	<br />
+	关于商业移民类别签证的优先度提高，一直是移民局近两年的工作重心。在新政中，此举仍将并进一步贯彻下去。目前关于此项政策细节信息尚未明确推出，敬请进一步关注。<br />
+	&nbsp;<br />
+	<strong>老托点评：</strong><br />
+	商业移民给澳洲带来的不仅仅是纯粹的资本注入，同时带了更多商业天才和理念。移民局和澳洲政府对于此类签证的审批一直处在不停的调整和改进当中。期望他们能够将此政策稳定的保持和发展下去，使更多的有商业经验的客人能够达成来澳投资和扩大其商业领域的目的。<br />
+	&nbsp;<br />
+	当然，老托对商业管理以及财务方面颇有了解，同时商业移民这方面从业经验充足，也有着非常多的成功案例。各位客人如果对于这方面感兴趣，欢迎不吝垂询。我们可以互相交流和切磋。<br />
+	&nbsp;<br />
+	<strong>3</strong><strong>）DIBP(也即移民局)和海关并构整合</strong><br />
+	<br />
+	自2015年7月1日起，DIBP(也即移民局)将会和海关整合形成新的办公机构Australian Border Force。移民局、海关及边境保卫部门将成为统一的政府职能部门，进一步提高工作效率。<br />
+	&nbsp;<br />
+	<strong>老托点评：</strong><br />
+	移民局近年在不停调整架构，变更名称和职能。我们也能看到其变化与澳洲经济的走势息息相关。希望这次调整能为广大移友提供更为高效的服务效率。<br />
+	&nbsp;<br />
+	<strong>4</strong><strong>）家庭类移民配额60885个，权重稳中有升。</strong><br />
+	<br />
+	为了彰显家庭团聚的亲密和谐以及其后续能够给社会所产生的经济效益，家庭移民中给配偶和子女的配额增加了335个，父母类别的移民配额也增加了500个。<br />
+	&nbsp;<br />
+	<strong>老托点评：</strong><br />
+	此政策更进一步地弘扬了澳洲人道主义关怀的精神。家庭类移民的优先级的提高以及份额的增加无疑将帮助很多来澳工作的人才解决其后顾之忧，使其能更专注的为工作、雇主和社会作出更佳的贡献。<br />
+	&nbsp;<br />
+	但值得大家注意的是，据老托了解，上述家庭类移民签证份额的增加很可能来源于一些其他同类别移民份额的缩减（例如排队型的父母移民以及其他的一些移民类别）。但其中的细节信息还有待进一步确认，老托会持续关注和明确相关信息后分享给大家。<br />
+	&nbsp;<br />
+	同时在此，老托还得赘述一下，家庭类移民的审核和要求远没有官方公布的清单所述的那么简单，如何更好地陈述申请人的背景，清晰的向签证官展示申请人的真实关系是一件非常有挑战的工作。关键事情上请务必考虑通过专业人士的帮助的方式，能助您事半功倍。<br />
+	&nbsp;<br />
+	<strong>5</strong><strong>）Streamlined Visa向职业教育拓展；</strong><br />
+	<br />
+	学生签证申请将会获得130万澳元的资助，用以将Streamlined Visa重新向职业教育扩展；<br />
+	&nbsp;<br />
+	<strong>老托点评：</strong><br />
+	此政策会重开TAFE以及类似的教育培训机构征召海外学生的份额和可能，降低英语水平较弱的技术性人才进入澳洲的门槛，从而更好地培养技术型人才，使其学以致用，创造价值。<br />
+	&nbsp;<br />
+	此举就留学移民角度而言，给一些自身条件暂时不符合独立技术移民的人士另外开辟了一条通向澳洲的道路，先留学学习紧缺职业，毕业后进一步申请移民，同时工作机会大大增加，岂不是一件一举多得的好事情？<br />
+	&nbsp;<br />
+	<strong>6</strong><strong>）4000个额外留给非法偷渡客（&ldquo;船民&rdquo;）的份额将被取消；</strong><br />
+	非法偷渡客的份额将不再继续，此举将节省2.67亿澳元的经费支出；同时移民局还将继续在海外扩展生物计量学的测试和认证 （例如：指纹识别等）<br />
+	&nbsp;<br />
+	<strong>老托点评：</strong><br />
+	此政策应该是标示移民局规范移民方式，收紧非法移民的途径的决心。此举固然影响了一部分人群获得身份的可能，但从另一个角度也增加了合法移居人士的工作和生活空间。<br />
+	&nbsp;<br />
+	&nbsp;<br />
+	总体看来，本次移民新政发布的主旨在于提振经济、支持劳动力市场、改造社会形态并且照顾家庭团聚。其中技术类移民份额占68%，家庭类移民份额占32%。这对于广大有意向移民的客人昭示了一个积极的信号，希望这个政策的进一步落实和推行能够更好地帮助到合适的客人移居澳洲这样一个美丽的乐园国度。老托我也会在后续进一步为大家逐条解读新政细节，是各位朋友能够更客观全面地了解下一年澳洲移民的政策。<br />
+	&nbsp;<br />
+	<strong>在此也提前感谢大家帮助将相关信息扩散出去，使更多有需求的人能够看到。如有关于相关政策的疑问，欢迎您通过网络、电话、电邮等各种形式于我们联系咨询。<br />
+	<br />
+	<img alt="" src="/uploads/allimg/140724/1-140H412251O54.jpg" style="width: 259px; height: 258px" /><br />
+	<img alt="" src="/uploads/allimg/140724/1-140H4122532439.jpg" style="width: 201px; height: 184px" /></strong><br />
+	&nbsp;</p>
+
+    
+      (责任编辑：admin)</td>
+    </tr>
+   </table>
+  </div>
+  <!-- /content -->
+  <div class="dede_pages">
+   <ul class="pagelist">
+    
+   </ul>
+  </div>
+  <!-- /pages -->
+  <!-- //顶踩 -->
+  <div class="newdigg" id="newdigg">
+   <div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',71)">
+    <div class="digg_act">顶一下</div>
+    <div class="digg_num">(0)</div>
+    <div class="digg_percent">
+     <div class="digg_percent_bar"><span style="width:0%"></span></div>
+     <div class="digg_percent_num">0%</div>
+    </div>
+   </div>
+   <div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',71)">
+    <div class="digg_act">踩一下</div>
+    <div class="digg_num">(0)</div>
+    <div class="digg_percent">
+     <div class="digg_percent_bar"><span style="width:0%"></span></div>
+     <div class="digg_percent_num">0%</div>
+    </div>
+   </div>
+  </div>
+  <script language="javascript" type="text/javascript">getDigg(71);</script>
+  <!-- //顶踩部份的源码结束 -->
+  <!-- //分享代码开始 -->
+  
+  <!-- //分享代码结束 -->
+  <div class="boxoff"> <strong>------分隔线----------------------------</strong> </div>
+  <div class="handle">
+   <div class="context">
+    <ul>
+     <li>上一篇：没有了 </li>
+     <li>下一篇：<a href='/a/aozhouzixun/20140724/72.html'>新财年第一轮EOI邀请解读</a> </li>
+    </ul>
+   </div>
+   <!-- /context -->
+   <div class="actbox">
+    <ul>
+     <li id="act-fav"><a href="/plus/stow.php?aid=71" target="_blank">收藏</a></li>
+     <li id="act-err"><a href="/plus/erraddsave.php?aid=71&title=2014-2015财政年度澳洲移民新政解读" target="_blank">挑错</a></li>
+     <li id="act-pus"><a href="/plus/recommend.php?aid=71" target="_blank">推荐</a></li>
+     <li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li>
+    </ul>
+   </div>
+   <!-- /actbox -->
+  </div>
+  <!-- /handle -->
+ </div>
+ <!-- /viewbox -->
+
+    </div> <!--end of primary  -->
+
+
+    
+    <div class="secondary">
+        <!--<div class="leader" style="padding:10px 10px;">
+	  <h2 class="aside-title"> <b>公司经理</b> </h2>
+          <div style="width:259px; height:352px;">
+              <div id="leader-logo"><img src="/mon/wp-content/themes/1/images/tony.jpg" /></div>
+              <p>商学硕士   管理学硕士  经济学学士<br/>
+澳大利亚注册移民代理：<br/>0531691<br/>
+澳大利亚移民学会会员：<br/>2411<br/>
+澳大利亚新南威尔士州太平绅士： <br/>179312<br/>
+</p>
+          </div>
+       </div>
+        <div class="case-list">
+             <h2 class="aside-title"> <b>最新批出</b> </h2>   
+             <style type='text/css'>
+	    .vertical_scroller6 {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            float: left;
+            width: 250px;
+            height: 200px;
+            padding: 2px 2px 2px 2px;
+            margin-bottom: 10px;
+	    }
+	    .scrollingtext {
+		    position:absolute;
+		    white-space: normal;
+            text-align: left;
+	    }
+        .scrollingtext ul {
+            text-indent: none;
+        }
+        .scrollingtext ul li {
+            padding-bottom: 10px;
+            list-style-type: none;
+        }
+        </style>
+        <script type='text/javascript'>
+            jQuery(document).ready(function($) {
+                $('.vertical_scroller6').SetScroller({
+                        velocity: 50,
+                        direction: 'vertical',
+                        startfrom: 'bottom'
+                });
+            });
+        </script>
+
+        <div class='gridContainer clearfix'>
+            <div class='vertical_scroller6'>
+                <div class='scrollingtext'>
+                    <ul>
+                        <li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8819%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e5%b9%bf%e4%b8%9c%e7%9a%84y%e5%a5%b3%e5%a3%ab892%e7%ad%be%e8%af%81%e8%8e%b7%e6%89%b9%ef%bc%81y%e5%a5%b3>2014年3月19日 热烈祝贺来自广东的Y女士892签证获批！Y女士于2010年3月持163签证入境澳洲，基于其国内的经商背景，Y女士决定自创生意。因自创生意的艰辛，麦尔肯在Y女士生意经营的两年期间不断给与鼓励和指导，最后帮助她和家人的892签证成功获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8819%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e5%b9%bf%e4%b8%9c%e7%9a%84h%e5%a5%b3%e5%a3%ab%e8%8e%b7%e5%be%97892%e7%ad%be%e8%af%81%e7%9a%84%e7%bb%b4>2014年3月19日 热烈祝贺来自广东的H女士获得892签证的维州政府担保！2014年3月6日递交，两周顺利获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8812%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e4%b8%ad%e5%9b%bd%e7%9a%84w%e5%a5%b3%e5%a3%ab%e5%a4%ab%e5%a6%87457%e5%b7%a5%e4%bd%9c%e7%ad%be%e8%af%81>2014年3月12日 热烈祝贺来自中国的W女士夫妇457工作签证的雇主提名资格申请顺利获批！W女士的雇主的担保资格曾经收到过移民局发来的警告信，对该雇主的担保人数提出过质疑。经过我公司专业的移民代理和团队工作人员的共同努力，以及雇主的积极配合，递交了十分完备的证明材料，提名资格在补充材料递交后1天后即快速获批。</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8812%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e4%b8%ad%e5%9b%bd%e7%9a%84y%e5%85%88%e7%94%9f%e5%a4%ab%e5%a6%87457%e5%b7%a5%e4%bd%9c%e7%ad%be%e8%af%81>2014年3月12日 热烈祝贺来自中国的Y先生夫妇457工作签证的雇主担保资格申请递交后12天顺利获批！没有任何补充材料直接获批。</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8828%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%baf%e5%a5%b3%e5%a3%ab187%e5%81%8f%e8%bf%9c%e5%9c%b0%e5%8c%ba%e9%9b%87%e4%b8%bb%e6%8b%85%e4%bf%9drcb%e7%94%b3%e8%af%b7%e4%b8%80>2014年2月28日 热烈祝贺F女士187偏远地区雇主担保RCB申请一天即获批！正常审理时间为一个月，但因为我们资料准备充分完备，创下了一天即获批的喜人记录！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e4%b8%ad%e5%9b%bd%e5%8c%97%e6%96%b9%e5%9f%8e%e5%b8%82%e7%9a%84y%e5%85%88%e7%94%9f%e5%85%a8%e5%ae%b6188>2014年2月25日 热烈祝贺来自中国北方城市的Y先生全家188类500万澳元投资移民签证成功获批！2013年6月11日递交申请，从准备签证申请材料到成功完成投资，麦尔肯全程跟踪。在签证官发出投资邀请时还发生了小插曲，即申请人之前申报的资金因故不能及时用作投资，麦尔肯凭借丰富的案件处理经验以及对政策要求的准确把握，立刻为其整理新的资金证明并快速通过审核，完成投资，终获喜讯！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e6%96%b0%e7%96%86%e7%9a%84t%e5%a5%b3%e5%a3%ab%e5%85%a8%e5%ae%b6892%e6%8a%95%e8%b5%84%e7%a7%bb%e6%b0%91%e6%b0%b8>2014年2月25 热烈祝贺来自新疆的T女士全家892投资移民永居签证日获批！无电话调查和面试，递交仅6个月，一次性获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%ad%a6%e5%90%8c%e5%ad%a6572%e5%ad%a6%e7%94%9f%e7%ad%be%e8%af%81%e9%85%8d%e5%81%b6%e7%94%b3%e8%af%b7%e8%8e%b7%e6%89%b9>2014年2月25日 热烈祝贺武同学572学生签证+配偶申请获批！递交1周即获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%8a%a4%e5%a3%ab%e4%b8%93%e4%b8%9a%e5%ae%8b%e5%90%8c%e5%ad%a6%e7%bb%b4%e5%b7%9e%e5%b7%9e%e6%8b%85%e4%bf%9d%e8%8e%b7%e6%89%b9>2014年2月25日 热烈祝贺护士专业宋同学维州州担保获批！宋同学有国内多年工作经验， 递交2天即获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8824%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e5%91%a8%e5%90%8c%e5%ad%a6%e6%96%b0%e5%b7%9e%e5%81%8f%e8%bf%9c%e5%9c%b0%e5%8c%ba%e5%b7%9e%e6%94%bf%e5%ba%9c%e6%8b%85%e4%bf%9d489>2014年2月24日 热烈祝贺周同学新州偏远地区州政府担保489签证批签！无雅思四个7，州担保资格和签证申请历时共4个月时间。打分情况如下：年龄30分，学历15分，雅思6分是0分，偏远地区读书5分，偏远地区州政府担保10分，共60分。</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8820%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e5%ae%89%e5%be%bd%e7%9a%84m%e5%85%88%e7%94%9f801%e9%85%8d%e5%81%b6%e6%b0%b8%e5%b1%85%e7%ad%be%e8%af%81>2014年2月20日 热烈祝贺来自安徽的M先生801配偶永居签证特快获批！ 7天快速下签！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8820%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e8%8c%83%e5%90%8c%e5%ad%a6%e5%ad%a6%e6%a0%a1%e9%87%8a%e6%94%be%e4%bf%a1%e7%94%b3%e8%af%b7%e8%8e%b7%e6%89%b9%ef%bc%81-%e9%80%92>2014年2月20日 热烈祝贺范同学学校释放信申请获批！ 递交3天即获批。</a></p></li>
+                    </ul>
+                </div> <!-- end of scrolling text 
+            </div>  <!-- end of Vertical Scroller 
+        </div>    
+			<!--
+                   <div class="more"> 
+                   <a href="">更多案例</a></div>
+
+					
+		
+		
+                
+                   <div class="more2">
+                   <a href="">查看经典案例</a>
+                   </div>
+			
+        </div> --><!-- end of news-list -->
+    <div class="clearfix"> </div>
+    
+<br/>    
+   <!-- <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="../widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=100&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2399735304&verifier=d4321fc7&dpc=1.html"></iframe>
+<iframe width="100%" height="350" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=9&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=2803132480&verifier=6daf321a&dpc=1"></iframe>-->
+
+<div class="section-wrap less-bottom" style="margin-top:-15px"> 
+        <h2 class="aside-title"><b>在线留言</b></h2>
+        <div class="contact">
+        <div class="wpcf7" id="wpcf7-f1215-o1">
+<form action="/plus/guestbook.php" method="post">
+<input type="hidden" value="save" name="action">
+<p>名字 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="uname" value="" size="40" /></span> </p>
+<!-- <p>标题 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="title" value="" size="40" /></span> </p> -->
+<p>邮箱 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" value="" size="40" /></span> </p>
+<p>您咨询的内容：<span class="wpcf7-form-control-wrap menu-480"><select name="title" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="澳洲留学">澳洲留学</option><option value="技术移民">技术移民</option><option value="雇主担保">雇主担保</option><option value="投资移民">投资移民</option><option value="其它咨询">其它咨询</option></select></span></p>
+<p>您的留言:<br />
+    <textarea name="msg" cols="40" rows="10"style='height:9em' ></textarea></p>
+<p>验证码 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="validate" value="" size="40" style="text-transform: uppercase;"/></span> </p>
+<img src="/include/vdimgck.php">
+<p><div class='eee'><input type="submit" value="发送" name='Submit' onclick="showmsg()" /></div></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
+        </div>
+    </div>            
+               
+       
+
+ <div class="section-wrap less-top">         
+        <h2 class="aside-title"> <b>在线咨询</b> </h2>
+            <div class="qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=490705629&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:490705629:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> <br/>雇主担保</div>
+            <div class="qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=490705629&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:490705629:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> <br/>综合咨询</div>
+            <div class="qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=490705629&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:490705629:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> <br/>综合咨询</div>
+          <div class="clearfix"> </div>
+               </div>
+               
+   <div class="section-wrap"> 
+        <h2 class="aside-title"><b>微信咨询</b></h2>
+            <div class="weixin-code"><img  src="/mon/wp-content/themes/1/images/wechat.png"> </div>
+            <p class="weixin-text">定时发布最新留学移民信息</p>
+    </div>     
+
+            
+               
+    </div> <!--end of secondary  -->
+
+<div class="clearfix"> </div>
+
+		<div id="footer">
+
+        <div class="logo-bottom"> 
+
+        <a href="http://yuntong.ecjtu.net/"><img  src="/mon/wp-content/themes/1/images/logo.png"> </a>
+
+        </div>
+
+        <div class="menu-bottom"> 
+            <div class="table">
+                <ul>
+<li id="menu-item-1197" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1197"><a href="http://yuntong.ecjtu.net/">首页</a></li>
+	
+      	<li><a href="/a/yuntongzhuanlan/"><span>运通专栏</span></a></li>
+      	
+      	<li><a href="/a/shangyeyimin/"><span>商业移民</span></a></li>
+      	
+      	<li><a href="/a/jishuyimin/"><span>技术移民</span></a></li>
+      	
+      	<li><a href="/a/guyongdanbao/"><span>雇主担保</span></a></li>
+      	<li class="hover"><a href="/a/aozhouliuxue/"><span>澳洲留学</span></a></li>
+      	<li><a href="/a/jiating_qitaqianzheng/"><span>家庭/其它签证</span></a></li>
+      	
+      	<li><a href="/a/chenggonganli/"><span>成功案例</span></a></li>
+      	
+      	<li><a href="/a/aozhouzixun/"><span>澳洲资讯</span></a></li>
+      	
+      	<li><a href="/a/guanyuwomen/"><span>关于我们</span></a></li>
+      	
+<li id="menu-item-1207" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1207"><a href="http://yuntong.ecjtu.net/">English</a></li>
+                </ul>
+            </div>
+        </div>
+
+           
+              
+    <div class="clearfix"> </div>
+    
+    
+    <div class="phone"> 
+        <div class="add">热线电话:<b> (612) 92640480</b> </div> 
+        <div class="add">电子邮件:Vinton.visas@gmail.com</div>
+<div class="add">澳洲总部地址：Suite 1309, Level 13, World Tower, 87 - 89 Liverpool Street, Sydney NSW 2000, Australia
+</div>
+    </div>
+    </div>
+
+
+        <div class="copyright">
+运通教育、移民及商业策划服务中心 <br/>
+Vinton Specialist Pty Ltd <br/>
+总经理 熊甦 Tony Su Xiong<br/>
+地址: ite 1309, Level 13, World Tower, 87 - 89 Liverpool Street, Sydney NSW 2000, Australia <br/>
+电话: (612) 92640480 传真 (612) 8999 8343<br/>
+Email: Vinton.visas@gmail.com<br/>
+QQ: 1536882028 2839036860 <br />   
+微信公众平台:Vinton_Migration<br/>
+Copyright © 2013-2014
+            </div> <!--end of copyright -->
+
+
+<link rel='stylesheet' id='slideshow-jquery-image-gallery-stylesheet_functional-css'  href='/mon/wp-content/plugins/slideshow-jquery-image-gallery/style/SlideshowPlugin/functional.css' type='text/css' media='all' />
+<link rel='stylesheet' id='slideshow-jquery-image-gallery-ajax-stylesheet_style-light-css'  href='http://montic.com.au/wp-admin/admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=style-light&038;ver=2.2.19' type='text/css' media='all' />
+<script type='text/javascript' src='/mon/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/montic.com.au\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"\u53d1\u9001\u4e2d\u3002\u3002\u3002"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/mon/wp-content/plugins/contact-form-7/includes/js/scripts.js'></script>
+<script type='text/javascript' src='/mon/wp-content/plugins/wp-jquery-lightbox/jquery.touchwipe.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var JQLBSettings = {"showInfo":"1","fitToScreen":"0","resizeSpeed":"400","displayDownloadLink":"0","navbarOnTop":"0","resizeCenter":"","marginSize":"","linkTarget":"_self","slideshowSpeed":"4000","help":"","prevLinkTitle":"previous image","nextLinkTitle":"next image","closeTitle":"close image gallery","image":"Image ","of":" of ","download":"Download","pause":"(pause slideshow)","play":"(play slideshow)"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='mon/wp-content/plugins/wp-jquery-lightbox/jquery.lightbox.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SlideshowPluginSettings_0 = {"animation":"slide","slideSpeed":"1","descriptionSpeed":"0.4","intervalSpeed":"8","slidesPerView":"1","maxWidth":"0","aspectRatio":"3:1","height":"240","imageBehaviour":"stretch","showDescription":"false","hideDescription":"true","preserveSlideshowDimensions":"false","enableResponsiveness":"true","play":"true","loop":"true","pauseOnHover":"true","controllable":"true","hideNavigationButtons":"false","showPagination":"true","hidePagination":"true","controlPanel":"false","hideControlPanel":"true","waitUntilLoaded":"true","showLoadingIcon":"true","random":"false","avoidFilter":"true"};
+var slideshow_jquery_image_gallery_script_adminURL = "http:\/\/montic.com.au\/wp-admin\/";
+/* ]]> */
+</script>
+<script type='text/javascript' src='/mon/wp-content/plugins/slideshow-jquery-image-gallery/js/min/all.frontend.min.js'></script>
+
+
+
+	<!-- Don't forget analytics -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42198828-1', 'montic.com.au');
+  ga('send', 'pageview');
+
+</script>
+
+</div> <!--end of footer -->
+<div class="clearfix"> </div>	
+	</div> <!-- end of pagewrap-->
+<div class="clearfix"> </div>
+</div>  <!-- outside -->
+</body>
+
+
+
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+
+<link href="/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script type="text/javascript">
+function showmsg(){
+ window.location.href="/plus/guestbook.php"; 
+}
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+
+
+
+	<meta charset="UTF-8" />
+		<title>澳洲留学、澳洲移民、雇主担保移民| 13年经验、9000多成功案例助您成功 - 麦尔肯移民留学与投资咨询</title>
+	<link rel="stylesheet" href="/mon/wp-content/themes/1/style.css">
+<link rel='stylesheet' id='sgjvsscrollerstyle-css'  href='/mon/wp-content/plugins/jquery-vertical-scroller/sgjvs_stylesheet.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='/mon/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery.lightbox.min.css-css'  href='/mon/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css' type='text/css' media='all' />
+<script type="text/javascript">
+var duoshuoQuery = {"short_name":"montic","sso":{"login":"http:\/\/montic.com.au\/wp-login.php?action=duoshuo_login","logout":"http:\/\/montic.com.au\/wp-login.php?action=logout&_wpnonce=58d2e46009"},"theme":"default","stylePatch":"wordpress\/james_Xu"};
+duoshuoQuery.sso.login += '&redirect_to=' + encodeURIComponent(window.location.href);
+duoshuoQuery.sso.logout += '&redirect_to=' + encodeURIComponent(window.location.href);
+</script>
+<script type="text/javascript" src="http://static.duoshuo.com/embed.js" charset="UTF-8" async="async"></script>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<script type='text/javascript' src='/mon/wp-content/plugins/jquery-vertical-scroller/scripts/jquery-scroller-v1.min.js'></script>
+<link rel="stylesheet" href="/mon/wp-content/plugins/wp-page-numbers/default/wp-page-numbers.css" type="text/css" media="screen" />	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<meta name="description" content="运通教育、移民" />
+<meta name="keywords" content="澳洲留学,澳洲移民,雇主担保,投资移民" />
+<meta name="google-site-verification" content="UA-42198828-1" />
+<link rel='next' href='http://montic.com.au/page/2/' />
+
+<link rel="canonical" href="montic.com.html" />
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-42198828-1']);
+		  _gaq.push(['_setDomainName', 'www.montic.com.au']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+<!-- /all in one seo pack -->
+</head> <!-- end of header -->
+
+<body class="home blog">
+<div class="outside">
+<div id="page-wrap">
+
+<div class="slider">
+    <div class="logo-top">
+        <div style="position:absolute; left:5px;">
+            <img src="/mon/wp-content/themes/1/images/logo.png"></img>
+        </div>
+        <div class="tel-top">热线电话<span>(612) 92640480</span></div>
+        <div class="tel-top2">电子邮件<span>Vinton.visas@gmail.com</span></div>
+        
+    </div> <!-- end of logo-->
+	
+	
+<div class="slideshow_container slideshow_container_style-light" style="height: 240px; " data-session-id="0" data-style-name="style-light" data-style-version="2.2.21">
+
+			<div class="slideshow_loading_icon"></div>
+	
+	<div class="slideshow_content" style="display: none;">
+
+		<div class="slideshow_view">
+			<div class="slideshow_slide slideshow_slide_image">
+				<a href="#" target="_self">					<img src="/mon/wp-content/themes/1/images/banner_01.png" alt="Home Banner_1" width="1020" height="240">
+				</a>				<div class="slideshow_description_box slideshow_transparent">
+					<div class="slideshow_title"><a href="http://yuntong.ecjtu.net/" target="_self">Home Banner_1</a></div>									</div>
+			</div>
+
+			<div style="clear: both;"></div></div><div class="slideshow_view">
+			<div class="slideshow_slide slideshow_slide_image">
+				<a href="#" target="_self">					<img src="/mon/wp-content/themes/1/images/banner_02.png" alt="成功案例" width="1020" height="240">
+				</a>				<div class="slideshow_description_box slideshow_transparent">
+					<div class="slideshow_title"><a href="http://yuntong.ecjtu.net/" target="_self">成功案例</a></div>									</div>
+			</div>
+
+			<div style="clear: both;"></div></div><div class="slideshow_view">
+			<div class="slideshow_slide slideshow_slide_image">
+				<a href="#" target="_self">					<img src="/mon/wp-content/themes/1/images/banner_03.png" alt="留学澳洲" width="1020" height="240">
+				</a>				<div class="slideshow_description_box slideshow_transparent">
+					<div class="slideshow_title"><a href="http://yuntong.ecjtu.net/" target="_self">留学澳洲</a></div>									</div>
+			</div>
+
+			<div style="clear: both;"></div></div>
+	</div>
+
+	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li class="slideshow_togglePlay" data-play-text="Play" data-pause-text="Pause"></li></ul></div>
+
+	<div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-previous-text="Previous" style="display: none;"></div>
+	<div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-next-text="Next" style="display: none;"></div>
+
+	<div class="slideshow_pagination" style="display: none;" data-go-to-text="Go to slide"><div class="slideshow_pagination_center"></div></div>
+</div>
+
+	<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-1197" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1197"><a href="http://yuntong.ecjtu.net/">首页</a></li>
+	
+      	<li><a href='/a/yuntongzhuanlan/' ><span>运通专栏</span></a></li>
+      	
+      	<li><a href='/a/shangyeyimin/' ><span>商业移民</span></a></li>
+      	
+      	<li><a href='/a/jishuyimin/' ><span>技术移民</span></a></li>
+      	
+      	<li><a href='/a/guyongdanbao/' ><span>雇主担保</span></a></li>
+      	
+      	<li><a href='/a/aozhouliuxue/' ><span>澳洲留学</span></a></li>
+      	
+      	<li><a href='/a/jiating_qitaqianzheng/' ><span>家庭/其它签证</span></a></li>
+      	
+      	<li><a href='/a/chenggonganli/' ><span>成功案例</span></a></li>
+      	
+      	<li><a href='/a/aozhouzixun/' ><span>澳洲资讯</span></a></li>
+      	
+      	<li><a href='/a/guanyuwomen/' ><span>关于我们</span></a></li>
+      	
+      	<li><a href='/a/anlidianping/' ><span>案例点评</span></a></li>
+      	
+<li id="menu-item-1207" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1207"><a href="http://yuntong.ecjtu.net/">English</a></li>
+</ul></div></div>
+
+
+<div class="clear"> </div>
+
+
+    <div class="primary">
+    
+      <div class="place"> <strong>当前位置:</strong> <a href='http://yuntong.ecjtu.net/'>主页</a> > <a href='/a/yiminxinwen/'>移民新闻</a> >  </div>
+ <!-- /place -->
+ <div class="viewbox">
+  <div class="title">
+   <h2>最新澳洲留学八大院校留学费用详解</h2>
+  </div>
+  <!-- /title -->
+  <div class="info"> <small>时间:</small>2014-07-15 21:28<small>来源:</small>未知 <small>作者:</small>admin <small>点击:</small>
+   <script src="/plus/count.php?view=yes&aid=53&mid=1" type='text/javascript' language="javascript"></script>
+   次</div>
+  <!-- /info -->
+  
+
+  <div class="intro">澳大利亚气候条件优越、社会福利发达，教学质量高、签证通过率高，具有显着留学与移民优势。利好政策实施后，办理材料简单化，签证速度加快，留学成本降低，选择范围变广，将</div>
+  
+
+  <div class="content">
+   <table width='100%'>
+    <tr>
+     <td>
+      澳大利亚气候条件优越、社会福利发达，教学质量高、签证通过率高，具有显着留学与移民优势。利好政策实施后，办理材料简单化，签证速度加快，留学成本降低，选择范围变广，将为我国留学生带来许多实质性好处，一时间澳洲留学市场再次火爆。<br />
+近两年，澳洲接连推出多项利好留学新政，如SVP简化签证，PSW延长工签。这些利好政策为即将选择澳大利亚留学的同学提供了很大实惠与便利，再度掀起了澳洲留学高潮，使得2014年当仁不让地成为了澳洲留学黄金年。<br />
+下面就来和大家盘点一下澳洲留学八大名校的费用详单。<br />
+1、澳大利亚国立大学The Australian National University<br />
+是澳大利亚一所研究型国立大学，建立于1946年，坐落在澳大利亚首都堪培拉，共设有七个学院，包括人文科学院、艺术学院、亚洲研究学院、经济与商学院、工程与资源管理学院、法学院及科学院。学校开设有众多的本科和研究生课程，如数字传媒、音乐、视觉艺术、工程学、软件工程、人类学、考古学、英文、地理、历史、哲学、政治学、社会学、会计、财务、法律、化学、物理、数学、植物学、动物学、心理学等等。学校的优势学科有数字传媒、计算机科学、亚洲研究、音乐、数学、保险、亚洲国际商务管理等。<br />
+本科：<br />
+学费：约23088澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:154538元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+硕士：<br />
+学费：约25752澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:172369元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+博士：<br />
+学费：约25752澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:172369元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+2、悉尼大学The University of Sydney<br />
+悉尼大学位于澳大利亚的新南威尔士州。学校建立于1850年，是澳大利亚的第一所大学，也是澳大利亚最大的大学之一。悉尼大学设有农业、食品与自然资源学院、建筑学院、文学院、牙医学院、商学院、教育及社会工作学院、工程及信息技术学院、艺术学院、健康科学院、法律学院、医学院、音乐学院、护理学院、药剂学院、科学院和兽医学院。<br />
+本科：<br />
+学费：约32880澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:220079元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+硕士：<br />
+学费：约30000澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:200802元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+博士：<br />
+学费：约30720澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:205622元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+3、墨尔本大学The University of Melbourne<br />
+是澳大利亚一所综合性公立大学，建立于1853年，是澳大利亚历史第二悠久的大学，在澳大利亚被归为砂岩学府之一，墨大是澳大利亚八大名校成员之一。墨大设有建筑暨城市规划学院、文学院、经济暨商学院、教育学院、工学院、土地暨食物资源学院、法学院、医学院、墨尔本商学院、音乐学院、理学院、兽医学院、维多利亚艺术学院、企业学院和研究所。学校开设有众多的本科、硕士和博士课程，如农业、牙科、教育、医学、音乐、护理、理疗、心理学、工商管理、工程、环境、地理信息系统、园艺、葡萄酒和葡萄栽培技术、法律、生物、建筑、会计、经济学、管理、舞蹈、戏剧艺术、环境工程、食品科学、城市规划、兽医学、视觉艺术等等。<br />
+本科：<br />
+学费：40050澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:268071元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140562元/学年<br />
+硕士：<br />
+学费：33775澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:226070元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140562元/学年<br />
+博士：<br />
+学费：36750澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:245983元/学年<br />
+生活费：15000-21000澳元/学年RMB:100401-140562元/学年<br />
+4、昆士兰大学The University of Queensland<br />
+昆士兰大学（UQ）是澳大利亚一所综合性公立大学，建立于1909年12月10日，是昆士兰州规模最大、历史最悠久的大学。学校提供全面且高质量的专业和课程，包括本科、硕士和博士专业，共有350个专业和4000个课程可供选择，如农业、应用科学、动物科学、植物学、园艺、生物技术、商业、管理学、市场营销、会计、通信、戏剧、影视研究、音乐、文学、历史、牙科、经济学、教育、工程、环境科学、食品科学、保健科学、信息技术、新闻、法律、海洋学、人类学、护理、兽医学等等。学校的优势学科有生物学、计算机科学、食品科学、商学等。<br />
+本科：<br />
+学费：31700澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:212181澳元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140562元/学年<br />
+硕士：<br />
+学费：24750澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:165662元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140562元/学年<br />
+博士：<br />
+学费：37325澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:249832元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140562元/学年<br />
+5、新南威尔士大学The University of New South Wales<br />
+新南威尔士大学（简称UNSW）是澳大利亚一所研究型公立大学，建立于1949年，大学共设有九大学院，包括文学和社会科学学院、建筑环境学院、艺术学院、工程学院、法学院、医学院、科学学院、澳大利亚商学院以及澳大利亚国防学院，各学院下设不同的学系。学校开设一系列的本科、硕士和博士专业，如高等数学、航空工程、建筑、艺术、舞蹈、生物技术、商业、化学、土木工程、通信、计算机科学、数字媒体、经济学、电气工程、环境工程、美术、食品科学、工业设计、信息系统、室内建筑、法学、风景园林、机械工程、新闻、医学、音乐、心理学等等。<br />
+本科：<br />
+学费：32050澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:214523元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140561元/学年<br />
+硕士：<br />
+学费：31510澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:210909元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140561元/学年<br />
+博士：<br />
+学费：30160澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:201873元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140561元/学年<br />
+6、莫纳什大学Monash University<br />
+莫纳什大学（Monash University,又译作莫纳士大学）是澳大利亚规模最大的国立大学之一，建立于1958年。蒙纳士大学设有十大学院，包括艺术与设计学院，文学院，商学与经济学院，教育学院，工程学院，信息技术学院，法学院，医学、护理与健康学院，制药学院以及理学院。学校开设了一系列的本科和研究生课程，如会计、航空航天、建筑设计、多媒体设计、美术、视觉艺术、法律、心理、人文学、行为科学、制药学、金融、人力资源管理、管理学、经济学、旅游、护理、医学、儿童教育、小学教育、中学教育、工程学、计算机科学、电子、化学、机械工程、环境工程、信息管理、网络技术、软件工程、生物科学、营养学、环境科学等等。<br />
+本科：<br />
+学费：25000澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:167335元/学年<br />
+生活费：15000-21000澳元/学年 RMB:100401-140562元/学年<br />
+硕士：<br />
+学费：26400澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:176706元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+博士：<br />
+学费：24400澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:163319元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+7、西澳大学The University of Western Australia<br />
+西澳大学位于西澳大利亚的首府柏斯。学校建立于1911年，西澳大学设有建筑、园艺及视觉艺术学院，文学、人民及社会科学院，经济及商业学院，教育学院，工程、电脑及数学学院，法学院，生命及物理科学院，医学、牙医学及健康科学院，农业及自然科学院。学校设有从专业到博士学位的各种课程。<br />
+本科：<br />
+学费：26230澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:175568元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+硕士：<br />
+学费：29625澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:198292元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+博士：<br />
+学费：27550澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:184404元/学年<br />
+生活费：15000-21000澳元/学年&nbsp; RMB:100401-140562元/学年<br />
+8、阿德雷德大学The University of Adelaide<br />
+阿德雷德大学是澳大利亚最具盛名的学府之一，始建于1874年，是澳大利亚历史上的第三所大学。阿德雷德大学有五大学院：工程、计算机和数学科学学院，健康科学学院，人文及社会科学学院，职业学院，自然科学学院。阿德雷德大学设置的本科课程约120多种，研究生课程约200多种：澳大利亚石油学院，化学工程，土木、环境与采矿工程，计算机科学，电子与电气工程，企业创办，商业化与创新，数学科学，机械工程，牙科科学，医药科学，医学，小儿科与生殖健康，人群健康与临床实践，心理学，音乐，历史与政治，人文科学，社会科学，建筑学、园林建筑学以及城市规划，商科，经济学，教育学，法学，农业、食品与葡萄酒，动物学与兽医学，化学与物理，地球与环境科学，分子与生物科学。<br />
+本科：<br />
+学费：28500澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:190762元/学年<br />
+生活费：15000-21000澳元/学年&nbsp;&nbsp; RMB:100401-140562元/学年<br />
+硕士：<br />
+学费：32500澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:217536元/学年<br />
+生活费：15000-21000澳元/学年&nbsp;&nbsp; RMB:100401-140562元/学年<br />
+博士：<br />
+学费：45250澳元/学年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RMB:302876元/学年<br />
+生活费：15000-21000澳元/学年&nbsp;&nbsp;&nbsp; RMB:100401-140562元<br />
+<br />
+<img alt="" src="/uploads/allimg/140715/1-140G52129442C.jpg" style="width: 259px; height: 258px" /><br />
+<img alt="" src="/uploads/allimg/140715/1-140G5213009553.jpg" style="width: 201px; height: 184px" />
+    
+      (责任编辑：admin)</td>
+    </tr>
+   </table>
+  </div>
+  <!-- /content -->
+  <div class="dede_pages">
+   <ul class="pagelist">
+    
+   </ul>
+  </div>
+  <!-- /pages -->
+  <!-- //顶踩 -->
+  <div class="newdigg" id="newdigg">
+   <div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',53)">
+    <div class="digg_act">顶一下</div>
+    <div class="digg_num">(0)</div>
+    <div class="digg_percent">
+     <div class="digg_percent_bar"><span style="width:0%"></span></div>
+     <div class="digg_percent_num">0%</div>
+    </div>
+   </div>
+   <div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',53)">
+    <div class="digg_act">踩一下</div>
+    <div class="digg_num">(0)</div>
+    <div class="digg_percent">
+     <div class="digg_percent_bar"><span style="width:0%"></span></div>
+     <div class="digg_percent_num">0%</div>
+    </div>
+   </div>
+  </div>
+  <script language="javascript" type="text/javascript">getDigg(53);</script>
+  <!-- //顶踩部份的源码结束 -->
+  <!-- //分享代码开始 -->
+  
+  <!-- //分享代码结束 -->
+  <div class="boxoff"> <strong>------分隔线----------------------------</strong> </div>
+  <div class="handle">
+   <div class="context">
+    <ul>
+     <li>上一篇：<a href='/a/yiminxinwen/2014/0715/52.html'>澳大学生毕业起薪最高专业 工科七万居首</a> </li>
+     <li>下一篇：<a href='/a/yiminxinwen/2014/0716/55.html'>新州州担保遭围抢 网站超负荷链接临时关闭</a> </li>
+    </ul>
+   </div>
+   <!-- /context -->
+   <div class="actbox">
+    <ul>
+     <li id="act-fav"><a href="/plus/stow.php?aid=53" target="_blank">收藏</a></li>
+     <li id="act-err"><a href="/plus/erraddsave.php?aid=53&title=最新澳洲留学八大院校留学费用详解" target="_blank">挑错</a></li>
+     <li id="act-pus"><a href="/plus/recommend.php?aid=53" target="_blank">推荐</a></li>
+     <li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li>
+    </ul>
+   </div>
+   <!-- /actbox -->
+  </div>
+  <!-- /handle -->
+ </div>
+ <!-- /viewbox -->
+
+    </div> <!--end of primary  -->
+
+
+    
+    <div class="secondary">
+        <!--<div class="leader" style="padding:10px 10px;">
+	  <h2 class="aside-title"> <b>公司经理</b> </h2>
+          <div style="width:259px; height:352px;">
+              <div id="leader-logo"><img src="/mon/wp-content/themes/1/images/tony.jpg" /></div>
+              <p>商学硕士   管理学硕士  经济学学士<br/>
+澳大利亚注册移民代理：<br/>0531691<br/>
+澳大利亚移民学会会员：<br/>2411<br/>
+澳大利亚新南威尔士州太平绅士： <br/>179312<br/>
+</p>
+          </div>
+       </div>
+        <div class="case-list">
+             <h2 class="aside-title"> <b>最新批出</b> </h2>   
+             <style type='text/css'>
+	    .vertical_scroller6 {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            float: left;
+            width: 250px;
+            height: 200px;
+            padding: 2px 2px 2px 2px;
+            margin-bottom: 10px;
+	    }
+	    .scrollingtext {
+		    position:absolute;
+		    white-space: normal;
+            text-align: left;
+	    }
+        .scrollingtext ul {
+            text-indent: none;
+        }
+        .scrollingtext ul li {
+            padding-bottom: 10px;
+            list-style-type: none;
+        }
+        </style>
+        <script type='text/javascript'>
+            jQuery(document).ready(function($) {
+                $('.vertical_scroller6').SetScroller({
+                        velocity: 50,
+                        direction: 'vertical',
+                        startfrom: 'bottom'
+                });
+            });
+        </script>
+
+        <div class='gridContainer clearfix'>
+            <div class='vertical_scroller6'>
+                <div class='scrollingtext'>
+                    <ul>
+                        <li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8819%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e5%b9%bf%e4%b8%9c%e7%9a%84y%e5%a5%b3%e5%a3%ab892%e7%ad%be%e8%af%81%e8%8e%b7%e6%89%b9%ef%bc%81y%e5%a5%b3>2014年3月19日 热烈祝贺来自广东的Y女士892签证获批！Y女士于2010年3月持163签证入境澳洲，基于其国内的经商背景，Y女士决定自创生意。因自创生意的艰辛，麦尔肯在Y女士生意经营的两年期间不断给与鼓励和指导，最后帮助她和家人的892签证成功获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8819%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e5%b9%bf%e4%b8%9c%e7%9a%84h%e5%a5%b3%e5%a3%ab%e8%8e%b7%e5%be%97892%e7%ad%be%e8%af%81%e7%9a%84%e7%bb%b4>2014年3月19日 热烈祝贺来自广东的H女士获得892签证的维州政府担保！2014年3月6日递交，两周顺利获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8812%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e4%b8%ad%e5%9b%bd%e7%9a%84w%e5%a5%b3%e5%a3%ab%e5%a4%ab%e5%a6%87457%e5%b7%a5%e4%bd%9c%e7%ad%be%e8%af%81>2014年3月12日 热烈祝贺来自中国的W女士夫妇457工作签证的雇主提名资格申请顺利获批！W女士的雇主的担保资格曾经收到过移民局发来的警告信，对该雇主的担保人数提出过质疑。经过我公司专业的移民代理和团队工作人员的共同努力，以及雇主的积极配合，递交了十分完备的证明材料，提名资格在补充材料递交后1天后即快速获批。</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b43%e6%9c%8812%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e4%b8%ad%e5%9b%bd%e7%9a%84y%e5%85%88%e7%94%9f%e5%a4%ab%e5%a6%87457%e5%b7%a5%e4%bd%9c%e7%ad%be%e8%af%81>2014年3月12日 热烈祝贺来自中国的Y先生夫妇457工作签证的雇主担保资格申请递交后12天顺利获批！没有任何补充材料直接获批。</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8828%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%baf%e5%a5%b3%e5%a3%ab187%e5%81%8f%e8%bf%9c%e5%9c%b0%e5%8c%ba%e9%9b%87%e4%b8%bb%e6%8b%85%e4%bf%9drcb%e7%94%b3%e8%af%b7%e4%b8%80>2014年2月28日 热烈祝贺F女士187偏远地区雇主担保RCB申请一天即获批！正常审理时间为一个月，但因为我们资料准备充分完备，创下了一天即获批的喜人记录！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e4%b8%ad%e5%9b%bd%e5%8c%97%e6%96%b9%e5%9f%8e%e5%b8%82%e7%9a%84y%e5%85%88%e7%94%9f%e5%85%a8%e5%ae%b6188>2014年2月25日 热烈祝贺来自中国北方城市的Y先生全家188类500万澳元投资移民签证成功获批！2013年6月11日递交申请，从准备签证申请材料到成功完成投资，麦尔肯全程跟踪。在签证官发出投资邀请时还发生了小插曲，即申请人之前申报的资金因故不能及时用作投资，麦尔肯凭借丰富的案件处理经验以及对政策要求的准确把握，立刻为其整理新的资金证明并快速通过审核，完成投资，终获喜讯！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e6%96%b0%e7%96%86%e7%9a%84t%e5%a5%b3%e5%a3%ab%e5%85%a8%e5%ae%b6892%e6%8a%95%e8%b5%84%e7%a7%bb%e6%b0%91%e6%b0%b8>2014年2月25 热烈祝贺来自新疆的T女士全家892投资移民永居签证日获批！无电话调查和面试，递交仅6个月，一次性获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%ad%a6%e5%90%8c%e5%ad%a6572%e5%ad%a6%e7%94%9f%e7%ad%be%e8%af%81%e9%85%8d%e5%81%b6%e7%94%b3%e8%af%b7%e8%8e%b7%e6%89%b9>2014年2月25日 热烈祝贺武同学572学生签证+配偶申请获批！递交1周即获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8825%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%8a%a4%e5%a3%ab%e4%b8%93%e4%b8%9a%e5%ae%8b%e5%90%8c%e5%ad%a6%e7%bb%b4%e5%b7%9e%e5%b7%9e%e6%8b%85%e4%bf%9d%e8%8e%b7%e6%89%b9>2014年2月25日 热烈祝贺护士专业宋同学维州州担保获批！宋同学有国内多年工作经验， 递交2天即获批！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8824%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e5%91%a8%e5%90%8c%e5%ad%a6%e6%96%b0%e5%b7%9e%e5%81%8f%e8%bf%9c%e5%9c%b0%e5%8c%ba%e5%b7%9e%e6%94%bf%e5%ba%9c%e6%8b%85%e4%bf%9d489>2014年2月24日 热烈祝贺周同学新州偏远地区州政府担保489签证批签！无雅思四个7，州担保资格和签证申请历时共4个月时间。打分情况如下：年龄30分，学历15分，雅思6分是0分，偏远地区读书5分，偏远地区州政府担保10分，共60分。</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8820%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e6%9d%a5%e8%87%aa%e5%ae%89%e5%be%bd%e7%9a%84m%e5%85%88%e7%94%9f801%e9%85%8d%e5%81%b6%e6%b0%b8%e5%b1%85%e7%ad%be%e8%af%81>2014年2月20日 热烈祝贺来自安徽的M先生801配偶永居签证特快获批！ 7天快速下签！</a></p></li><li><p class='sgjvs_sc_title'><a href=http://montic.com.au/2014%e5%b9%b42%e6%9c%8820%e6%97%a5-%e7%83%ad%e7%83%88%e7%a5%9d%e8%b4%ba%e8%8c%83%e5%90%8c%e5%ad%a6%e5%ad%a6%e6%a0%a1%e9%87%8a%e6%94%be%e4%bf%a1%e7%94%b3%e8%af%b7%e8%8e%b7%e6%89%b9%ef%bc%81-%e9%80%92>2014年2月20日 热烈祝贺范同学学校释放信申请获批！ 递交3天即获批。</a></p></li>
+                    </ul>
+                </div> <!-- end of scrolling text 
+            </div>  <!-- end of Vertical Scroller 
+        </div>    
+			<!--
+                   <div class="more"> 
+                   <a href="">更多案例</a></div>
+
+					
+		
+		
+                
+                   <div class="more2">
+                   <a href="">查看经典案例</a>
+                   </div>
+			
+        </div> --><!-- end of news-list -->
+    <div class="clearfix"> </div>
+    
+<br/>    
+   <!-- <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="../widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=100&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2399735304&verifier=d4321fc7&dpc=1.html"></iframe>
+<iframe width="100%" height="350" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=9&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=2803132480&verifier=6daf321a&dpc=1"></iframe>-->
+
+<div class="section-wrap less-bottom" style="margin-top:-15px"> 
+        <h2 class="aside-title"><b>在线留言</b></h2>
+        <div class="contact">
+        <div class="wpcf7" id="wpcf7-f1215-o1">
+<form action="/plus/guestbook.php" method="post">
+<input type="hidden" value="save" name="action">
+<p>名字 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="uname" value="" size="40" /></span> </p>
+<!-- <p>标题 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="title" value="" size="40" /></span> </p> -->
+<p>邮箱 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" value="" size="40" /></span> </p>
+<p>您咨询的内容：<span class="wpcf7-form-control-wrap menu-480"><select name="title" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="澳洲留学">澳洲留学</option><option value="技术移民">技术移民</option><option value="雇主担保">雇主担保</option><option value="投资移民">投资移民</option><option value="其它咨询">其它咨询</option></select></span></p>
+<p>您的留言:<br />
+    <textarea name="msg" cols="40" rows="10"style='height:9em' ></textarea></p>
+<p>验证码 (必填):<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="validate" value="" size="40" style="text-transform: uppercase;"/></span> </p>
+<img src="/include/vdimgck.php">
+<p><div class='eee'><input type="submit" value="发送" name='Submit' onclick="showmsg()" /></div></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
+        </div>
+    </div>            
+               
+       
+
+ <div class="section-wrap less-top">         
+        <h2 class="aside-title"> <b>在线咨询</b> </h2>
+            <div class="qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=490705629&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:490705629:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> <br/>雇主担保</div>
+            <div class="qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=490705629&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:490705629:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> <br/>综合咨询</div>
+            <div class="qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=490705629&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:490705629:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> <br/>综合咨询</div>
+          <div class="clearfix"> </div>
+               </div>
+               
+   <div class="section-wrap"> 
+        <h2 class="aside-title"><b>微信咨询</b></h2>
+            <div class="weixin-code"><img  src="/mon/wp-content/themes/1/images/wechat.png"> </div>
+            <p class="weixin-text">定时发布最新留学移民信息</p>
+    </div>     
+
+            
+               
+    </div> <!--end of secondary  -->
+
+<div class="clearfix"> </div>
+
+		<div id="footer">
+
+        <div class="logo-bottom"> 
+
+        <a href="http://yuntong.ecjtu.net/"><img  src="/mon/wp-content/themes/1/images/logo.png"> </a>
+
+        </div>
+
+        <div class="menu-bottom"> 
+            <div class="table">
+                <ul>
+<li id="menu-item-1197" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1197"><a href="http://yuntong.ecjtu.net/">首页</a></li>
+	
+      	<li><a href="/a/yuntongzhuanlan/"><span>运通专栏</span></a></li>
+      	
+      	<li><a href="/a/shangyeyimin/"><span>商业移民</span></a></li>
+      	
+      	<li><a href="/a/jishuyimin/"><span>技术移民</span></a></li>
+      	
+      	<li><a href="/a/guyongdanbao/"><span>雇主担保</span></a></li>
+      	<li class="hover"><a href="/a/aozhouliuxue/"><span>澳洲留学</span></a></li>
+      	<li><a href="/a/jiating_qitaqianzheng/"><span>家庭/其它签证</span></a></li>
+      	
+      	<li><a href="/a/chenggonganli/"><span>成功案例</span></a></li>
+      	
+      	<li><a href="/a/aozhouzixun/"><span>澳洲资讯</span></a></li>
+      	
+      	<li><a href="/a/guanyuwomen/"><span>关于我们</span></a></li>
+      	
+<li id="menu-item-1207" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1207"><a href="http://yuntong.ecjtu.net/">English</a></li>
+                </ul>
+            </div>
+        </div>
+
+           
+              
+    <div class="clearfix"> </div>
+    
+    
+    <div class="phone"> 
+        <div class="add">热线电话:<b> (612) 92640480</b> </div> 
+        <div class="add">电子邮件:Vinton.visas@gmail.com</div>
+<div class="add">澳洲总部地址：Suite 1309, Level 13, World Tower, 87 - 89 Liverpool Street, Sydney NSW 2000, Australia
+</div>
+    </div>
+    </div>
+
+
+        <div class="copyright">
+运通教育、移民及商业策划服务中心 <br/>
+Vinton Specialist Pty Ltd <br/>
+总经理 熊甦 Tony Su Xiong<br/>
+地址: ite 1309, Level 13, World Tower, 87 - 89 Liverpool Street, Sydney NSW 2000, Australia <br/>
+电话: (612) 92640480 传真 (612) 8999 8343<br/>
+Email: Vinton.visas@gmail.com<br/>
+QQ: 1536882028 2839036860 <br />   
+微信公众平台:Vinton_Migration<br/>
+Copyright © 2013-2014
+            </div> <!--end of copyright -->
+
+
+<link rel='stylesheet' id='slideshow-jquery-image-gallery-stylesheet_functional-css'  href='/mon/wp-content/plugins/slideshow-jquery-image-gallery/style/SlideshowPlugin/functional.css' type='text/css' media='all' />
+<link rel='stylesheet' id='slideshow-jquery-image-gallery-ajax-stylesheet_style-light-css'  href='http://montic.com.au/wp-admin/admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=style-light&038;ver=2.2.19' type='text/css' media='all' />
+<script type='text/javascript' src='/mon/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/montic.com.au\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"\u53d1\u9001\u4e2d\u3002\u3002\u3002"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/mon/wp-content/plugins/contact-form-7/includes/js/scripts.js'></script>
+<script type='text/javascript' src='/mon/wp-content/plugins/wp-jquery-lightbox/jquery.touchwipe.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var JQLBSettings = {"showInfo":"1","fitToScreen":"0","resizeSpeed":"400","displayDownloadLink":"0","navbarOnTop":"0","resizeCenter":"","marginSize":"","linkTarget":"_self","slideshowSpeed":"4000","help":"","prevLinkTitle":"previous image","nextLinkTitle":"next image","closeTitle":"close image gallery","image":"Image ","of":" of ","download":"Download","pause":"(pause slideshow)","play":"(play slideshow)"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='mon/wp-content/plugins/wp-jquery-lightbox/jquery.lightbox.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SlideshowPluginSettings_0 = {"animation":"slide","slideSpeed":"1","descriptionSpeed":"0.4","intervalSpeed":"8","slidesPerView":"1","maxWidth":"0","aspectRatio":"3:1","height":"240","imageBehaviour":"stretch","showDescription":"false","hideDescription":"true","preserveSlideshowDimensions":"false","enableResponsiveness":"true","play":"true","loop":"true","pauseOnHover":"true","controllable":"true","hideNavigationButtons":"false","showPagination":"true","hidePagination":"true","controlPanel":"false","hideControlPanel":"true","waitUntilLoaded":"true","showLoadingIcon":"true","random":"false","avoidFilter":"true"};
+var slideshow_jquery_image_gallery_script_adminURL = "http:\/\/montic.com.au\/wp-admin\/";
+/* ]]> */
+</script>
+<script type='text/javascript' src='/mon/wp-content/plugins/slideshow-jquery-image-gallery/js/min/all.frontend.min.js'></script>
+
+
+
+	<!-- Don't forget analytics -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42198828-1', 'montic.com.au');
+  ga('send', 'pageview');
+
+</script>
+
+</div> <!--end of footer -->
+<div class="clearfix"> </div>	
+	</div> <!-- end of pagewrap-->
+<div class="clearfix"> </div>
+</div>  <!-- outside -->
+</body>
+
+
+
+</html>
